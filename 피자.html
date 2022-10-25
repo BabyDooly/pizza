@@ -1,0 +1,212 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+	<meta charset="UTF-8">
+	<link href="css/style.css" rel="stylesheet">
+	<style type="text/css">
+		body {width:1300px; margin:0 auto; background:#FAECC5 }
+	
+		.top_bar_fix1{ position:fixed;  
+				top:0; left:0; width:100%; 
+		}
+		.top_bar_fix2{ border-radius:30px 30px 0 0; }
+		nav .top_fix_zone{ height:60px; background:#C98B68; 
+						line-height:60px;  
+		}
+		nav div{width:100%; text-align:center; 
+			font-size:20px; font-weight:700; color:#fff;
+		}
+		.nav_a:link { color: white; text-decoration: none;}
+ 		.nav_a:visited { color: white; text-decoration: none;}
+ 		.nav_a:hover { color: #FF6C6C; text-decoration: none;}
+
+
+		#main { width:1100px; height:960px; 
+			margin:50px auto; border:solid 1px #B8B8B8;
+		}
+		.MAIN { width:1100px; height:320px; }
+		.main_img{ width:220px; margin: 20px; border:solid 1px #B8B8B8; }
+		.img1	{ margin-left: 35px; }
+
+
+		footer{ width:900px; height:215px; 
+		 	margin:50px auto; border:thin dashed black;
+			  }
+		#footer_img { width:190px; height:215px; 
+		 	margin-left:10px; float:left;
+		}
+		#footer_main { width:690px; height:215px; 
+		 	margin-left:10px; float:right; 
+		}
+		#footer_main_top { width:690px; height:30px; }
+		#footer_main_down { width:690px; height:163px; }
+		.down1{ width:210px; height:163px;  float: left;}
+		.down2{ width:250px; height:163px; float: left;}
+		.down3{ width:220px; height:163px;  float: right;}
+
+
+		.circle {
+			width: 50px; height: 50px;
+			border-radius: 50% 50%;
+			position: fixed;
+			font-size: 11px;
+			text-align: center;
+			line-height:50px;
+
+			background: #eeeeee; /* Old browsers */
+			background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+
+
+			box-shadow: 2px 2px 10px black
+		}
+		#circle_top{ right: 35px; bottom: 65px; }
+		#circle_down{ right: 35px; bottom: 10px; }
+
+		#slidemenu{ position:absolute; 
+			top:100px; left:10px;
+		}
+
+		#slidename{ background:#A6A6A6;
+			height:80px; width:50px;
+			border-radius:0 20px 20px 0; line-height:40px; 
+			font-size:19px; font-weight:600; color:white;
+			text-align:center; float: left;
+			margin:0 10px 0 0; 
+		}
+
+		#slidehide { background:white;
+			height:400px; width:200px;
+			font-size:19px; font-weight:600;
+			text-align:center; float: right;
+			border:solid 1px;
+		}
+
+		#slidehide_Top{ height:360px; width:200px; }
+		#slidehide_Down{ height:40px; width:200px; }
+	</style>
+
+	
+	<script src="js/script.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>	
+	<script>
+		window.onload = function(){
+
+			var topBar = $("#topBar").offset();
+
+				$(window).scroll(function(){
+					var docScrollY = $(document).scrollTop()
+					var barThis = $("#topBar")
+
+					if( docScrollY > topBar.top ) {
+						barThis.addClass("top_bar_fix1");
+						barThis.removeClass("top_bar_fix2");
+					}else{
+						barThis.removeClass("top_bar_fix1");
+						barThis.addClass("top_bar_fix2");
+					}
+				});
+
+		    $(document).ready(function(){
+		        var currentPosition = parseInt($("#slidemenu").css("top"));
+		        $(window).scroll(function() {
+		            var position = $(window).scrollTop();
+		            $("#slidemenu").stop().animate({"top":position+currentPosition+"px"},1000);
+		        });
+		    });			
+
+		    $("#slidename").click(function(){
+		        $("#slidehide").toggle(500);
+		    });
+
+		};
+	</script>
+
+	<title>피자 페이지</title>
+ </head>
+
+ <body>
+	<nav>
+		<div class="top_fix_zone" id="topBar">
+			<a class="nav_a" href="피자한조각 메인 페이지.html">HOME</a>&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class="nav_a" href="피자.html" >피자</a>&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class="nav_a" href="사이드메뉴.html" >사이드메뉴</a>&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class="nav_a" href="음료.html">음료</a>&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class="nav_a" href="#" onclick="alert('점검중입니다.')" >주문하기</a>
+		</div>
+	</nav>
+
+	<div id="main">
+		<div id="main1" class="MAIN">
+			<img class="main_img img1" src="사진/피자/premium_20121123.jpg">
+			<img class="main_img" src="사진/피자/RPZ133_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ132G_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ132_A.jpg">
+		</div>
+		<div id="main2" class="MAIN">
+			<img class="main_img img1" src="사진/피자/RPZ131_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ128G_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ128_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ126G_A.jpg">
+		</div>
+		<div id="main3" class="MAIN">
+			<img class="main_img img1" src="사진/피자/RPZ126_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ088_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ076_A.jpg">
+			<img class="main_img" src="사진/피자/RPZ037_A.jpg">
+		</div>
+	</div>
+
+	<footer>
+		<div id = "footer_img">
+			<img src="사진/피자 한조각.png" width="200">
+		</div>
+		<div id = "footer_main">
+			<div id="footer_main_top">
+				<h3>고객센터 : 010 - 6301 - 2114 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp최소주문금액 : 30,000원</h3>
+				<hr>
+			</div>
+
+			<div id="footer_main_down">
+				<div class="down1">
+					<h4>< 영업 정보 ></h4>
+						주문시간 : 10:00 ~ 24:00 <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(주말 공유일 휴무)<br>
+						전화번호 : 010-6301-2114
+				</div>
+
+				<div class="down2">
+					<h4>< 원산지 ></h4>
+					소고기(국내산), 돼지고기(국내산), 페파로니(국내산), 닭고기(국내산)
+				</div>
+				<div class="down3">
+					<h4>< 무통장계좌 ></h4>
+					예금주 : 홍성주<br>
+					새마을 : 5212-10-025108-1<br>
+					대구 : 508-12-399422-9<br>
+					국민 : 940302-00-035997<br>
+					<select  onchange="window.open(this.value)">
+						<option value="피자가게.html">인터넷뱅킹바로가기</option>
+						<option value="https://www.kfcc.co.kr/">새마을금고</option>
+						<option value="https://www.dgb.co.kr/dgb_ebz_main.jsp">대구은행</option>
+						<option value="https://www.kbstar.com/">국민은행</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div>
+		<div id="circle_top" class="circle" onClick="location.href='#topBar'" style="cursor:hand;" >TOP</div>
+		<div id="circle_down" class="circle" onClick="location.href='#footer_main_down'" style="cursor:hand;">DOWN</div>
+	</div>
+
+	<div id="slidemenu">
+		<div id="slidename">
+			장바구니
+		</div>
+		<div id="slidehide">
+			<div id="slidehide_Top">
+				
+			</div>
+			<div id="slidehide_Down"><input type="submit" id="order" value="주문하기"  style="margin-top:10px"  onclick="alert('주문내역이 없습니다.')"></div>
+		</div>
+	</div>
+</body>
+</html>
